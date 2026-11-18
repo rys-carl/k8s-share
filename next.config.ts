@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/k8s-share",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
