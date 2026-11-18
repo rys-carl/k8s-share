@@ -194,7 +194,7 @@ const E2E_STEPS = [
     command: "kubectl apply -f deployment.yaml",
     title: "1. Declare Desired State",
     description:
-      'You or your CI/CD pipeline send a YAML configuration file to Kubernetes stating: "Run 3 replicas of web-app:v1.5 and expose them on port 80."',
+      'Send the YAML configuration file to Kubernetes stating: "Run 3 replicas of web-app:v1.5 and expose them on port 80."',
     highlight: "dev",
   },
   {
@@ -557,7 +557,7 @@ export function K8sPresentation() {
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-base sm:text-lg font-bold tracking-tight text-slate-900">
-                  Docker & Kubernetes: A Developer’s Mental Model
+                  Docker & Kubernetes: A Simple Mental Model
                 </h1>
               </div>
               <p className="text-xs text-slate-500">
@@ -611,7 +611,7 @@ export function K8sPresentation() {
                   Foundation: Containerization
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
-                  Step 1: Packaging Code with Docker
+                  Packaging Code with Docker
                 </h2>
                 <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
                   Before Kubernetes can orchestrate anything, our application
@@ -909,8 +909,7 @@ export function K8sPresentation() {
                 Cluster → Node → Pod → Container
               </h2>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Think of Kubernetes objects like Russian nesting dolls. Click
-                any layer in the visual diagram below to inspect how each piece
+                Click any layer in the visual diagram below to inspect how each piece
                 wraps the next.
               </p>
             </div>
@@ -1555,7 +1554,7 @@ export function K8sPresentation() {
               {[
                 {
                   key: "dev",
-                  label: "Developer / CI",
+                  label: "Developer",
                   sub: "kubectl apply",
                   icon: Terminal,
                 },

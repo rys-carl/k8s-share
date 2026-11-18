@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Docker & Kubernetes: A Developer's Mental Model
 
-## Getting Started
+An interactive, minimalist web presentation designed to explain the high-level architecture and core mental models of **Docker** and **Kubernetes (K8s)** from a developer's perspective. 
 
-First, run the development server:
+Built as a visual aid for Knowledge Sharing sessions to bridge the gap between application development and cloud infrastructure.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Interactive Modules
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **The Docker Foundation**
+   - Step-by-step interactive walkthrough of the container packaging pipeline (`Dockerfile` → `Image` → `Registry` → `Container`).
+   - **Single-Server Wall Simulator:** Toggle between normal traffic, a 5x traffic spike, and a 2 AM server crash to visualize why single-host Docker setups hit a wall in production.
+2. **Kubernetes Nesting Hierarchy**
+   - Clickable Russian-nesting-doll architecture diagram (`Cluster` → `Worker Node` → `Pod` → `Container`) with plain-English explanations and everyday analogies.
+3. **Desired State & 2 AM Self-Healing Playground**
+   - Live `deployment.yaml` replica editor, **HPA (Horizontal Pod Autoscaler)** traffic load slider, and chaos triggers to simulate random Pod crashes or full Node outages while watching the Control Plane reconcile the cluster.
+4. **End-to-End Request Flow**
+   - Manual and auto-playing 5-stage pipeline tracing a deployment from `kubectl apply` through the Control Plane, Worker Nodes, and Kubernetes Service Load Balancer out to end users.
+5. **Developer Cheat Sheet**
+   - Searchable and category-filterable glossary translating core container and orchestration terms into plain English.
+6. **Built-in Presenter Script**
+   - Toggleable speaker talking points synced to each presentation tab for live demos and knowledge-sharing sessions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Getting Started Locally
 
-## Deploy on Vercel
+### Prerequisites
+- `npm`, `yarn`, `pnpm`, or `bun`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-url>
+   cd <your-project-folder>
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the interactive guide.
+
+---
+
+## Deployment
+
+This project is configured for zero-config deployment on **Vercel**:
+1. Push your code to GitHub, GitLab, or Bitbucket.
+2. Import the repository into your [Vercel Dashboard](https://vercel.com/new).
+3. Vercel will automatically detect Next.js, build the project, and assign a live production URL.
+
+---
+
+## Purpose & Audience
+
+Created specifically for frontend and application developers who want a clear, visual mental model of how containerized applications are packaged, deployed, scaled, and kept alive in production—without getting lost in heavy infrastructure jargon.
